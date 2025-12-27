@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Form</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<div class="auth-wrapper">
+
+    <div class="background-shape"></div>
+    <div class="secondary-shape"></div>
+
+    <!-- ================= LOGIN ================= -->
+    <div class="credentials-panel signin">
+        <h2 class="slide-element">Login</h2>
+       <p id="loginErrorMsg"
+   style="display:none; color:#ff6b6b; text-align:center; font-size:10px;">
+</p>
+
+<p id="loginPasswordMsg"
+   style="display:none; color:#ff6b6b; text-align:center; font-size:10px;">
+</p>
+
+
+        <form onsubmit="loginUser(event)">
+
+            <div class="field-wrapper slide-element">
+                <input type="text" id="loginRoll" required>
+                <label for="loginRoll">University Roll Number</label>
+                <i class="fa-solid fa-id-card"></i>
+            </div>
+
+            <div class="field-wrapper slide-element">
+                <input type="text" id="loginName" required>
+                <label for="loginName">Name</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            
+            <div class="field-wrapper slide-element">
+                <select id="loginBatch" required>
+                    <option value="">--Select Batch--</option>
+                    <option>BCADS21</option>
+                    <option>BCADS22</option>
+                    <option>BCADS23</option>
+                    <option>BCADS24</option>
+                    <option>BCADS25</option>
+                    <option>BCADS26</option>
+                    <option>BCADS27</option>
+                </select>
+                <label>Batch</label>
+            </div>
+
+            <div class="field-wrapper slide-element password-box">
+                <input type="password" id="loginPassword" required>
+                <label for="loginPassword">Password</label>
+                <i class="fa-solid fa-lock"></i>
+
+                <span class="toggle-password"
+                      onclick="togglePassword('loginPassword', this)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+
+            <div class="field-wrapper slide-element">
+                <button class="submit-button" type="submit">Login</button>
+            </div>
+<p id="forgotPasswordLink"
+   onclick="forgotPassword(event)">
+  Forgot Password?
+</p>
+            <div class="switch-link slide-element">
+                <p>
+                    Don't have an account?<br>
+                    <a href="#" class="register-trigger">Sign Up</a>
+                </p>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="welcome-section signin">
+        <h2 class="slide-element">WELCOME BACK!</h2>
+        <p class="slide-element">
+        Everything you need for your studies—assignments, notes, and PYQs—just one login away📚✨
+    </p>
+    </div>
+
+    <!-- ================= REGISTER ================= -->
+    <div class="credentials-panel signup">
+        <h2 class="slide-element">Register</h2>
+
+        <form onsubmit="registerUser(event)">
+
+        <p id="signupErrorMsg"
+           class="slide-element"
+           style="display:none; color:#ff6b6b; text-align:center; margin-bottom:10px; font-size:10px;">
+        </p>
+
+            <div class="field-wrapper slide-element">
+                <input type="text" id="signupRoll" required>
+                <label for="signupRoll">University Roll Number</label>
+                <i class="fa-solid fa-id-card"></i>
+            </div>
+
+            <div class="field-wrapper slide-element">
+                <input type="text" id="signupName" required>
+                <label for="signupName">Name</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="field-wrapper slide-element">
+                <select id="signupBatch" required>
+                    <option value="">--Select Batch--</option>
+                    <option>BCADS21</option>
+                    <option>BCADS22</option>
+                    <option>BCADS23</option>
+                    <option>BCADS24</option>
+                    <option>BCADS25</option>
+                    <option>BCADS26</option>
+                    <option>BCADS27</option>
+                </select>
+                <label>Batch</label>
+            </div>
+
+            <div class="field-wrapper slide-element password-box">
+                <input type="password" id="signupPassword" required>
+                <label for="signupPassword">Password</label>
+
+                <i class="fa-solid fa-lock"></i>
+
+                <span class="toggle-password"
+                      onclick="togglePassword('signupPassword', this)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+
+            <div class="field-wrapper slide-element">
+                <button class="submit-button" type="submit">Register</button>
+            </div>
+
+            <div class="switch-link slide-element">
+                <p>
+                    Already have an account?<br>
+                    <a href="#" class="login-trigger">Sign In</a>
+                </p>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="welcome-section signup">
+        <h2 class="slide-element">WELCOME!</h2>
+        <p class="slide-element">
+        Create your account and get instant access to assignments, notes, and previous year question papers 📘✨
+    </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>Bachelor of Computer Application (Data Science & Artificial Intelligence)</p>
+</div>
+ <div class="help-menu" onclick="toggleHelp()">
+  <i class="fa-solid fa-circle-question"></i>
+</div>
+<div class="help-popup" id="helpPopup">
+  <h3>How to use this portal</h3>
+  <ul>
+    <li>➡ If you are new, click <b>Sign Up</b> and create an account.</li>
+    <li>➡ After registration, <b>Login</b> using your university roll number, name, batch, and password.</li>
+    <li>➡ Access assignments, notes, and previous year question papers.</li>
+    <li>➡ If login fails, please register first.</li>
+  </ul>
+  <button onclick="toggleHelp()">Got it</button>
+</div>
+
+<script src="style.js" defer></script>
+
+</body>
+</html>
+
+
