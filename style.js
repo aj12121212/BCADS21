@@ -44,7 +44,7 @@ function togglePassword(inputId, iconElement) {
  * GOOGLE APPS SCRIPT URL
  *************************************************/
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwQ7_2MTZOAUQfKmOGiOhL52QsxDuLyiV7Hw8m5RjvYoy6qyTSQt6Zb3pAUkx67lspAVQ/exec";
+  "https://script.google.com/macros/s/AKfycbx4YCCsk7i4qpCUKVsfPsecp7avFkNH02WLB4WFGuzf6mZf5RlBTaFkst9nehWYnOypzg/exec";
 
 /*************************************************
  * REGISTER USER (WITH BATCH)
@@ -283,4 +283,5 @@ document.addEventListener("click", function () {
   if (passMsg) passMsg.style.display = "none";
 });
  
+
 
